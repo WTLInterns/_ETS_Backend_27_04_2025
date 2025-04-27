@@ -1,0 +1,8 @@
+package com.example.demo.Model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Driver {
+    
+}
