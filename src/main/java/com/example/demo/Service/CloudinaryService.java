@@ -15,9 +15,21 @@ public class CloudinaryService {
     @Autowired
     private Cloudinary cloudinary;
 
-    public String uploadFile(MultipartFile file) throws IOException {
+    public String upload(MultipartFile file) throws IOException {
         Map uploadResult = cloudinary.uploader().upload(file.getBytes(), ObjectUtils.emptyMap());
         return uploadResult.get("secure_url").toString(); // You get the secure URL
     }
+
+    // public String upload(MultipartFile file) {
+    //     try {
+    //         // Upload the file and get the result as a Map
+    //         Map<String, Object> uploadResult = cloudinary.uploader().upload(file.getBytes(), ObjectUtils.emptyMap());
+    //         // Extract the URL from the Map and return it as a String
+    //         return uploadResult.get("url").toString(); 
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //         return null;
+    //     }
+    // }
 }
 

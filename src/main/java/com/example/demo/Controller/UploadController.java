@@ -9,7 +9,7 @@ import com.example.demo.Service.CloudinaryService;
 
 @RestController
 @RequestMapping("/api/v1")
-public class CloduUploadController {
+public class UploadController {
 
     @Autowired
     private CloudinaryService cloudinaryService;
@@ -17,7 +17,7 @@ public class CloduUploadController {
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
-            String uploadedImageUrl = cloudinaryService.uploadFile(file);
+            String uploadedImageUrl = cloudinaryService.upload(file);
             return ResponseEntity.ok(uploadedImageUrl);
         } catch (Exception e) {
             e.printStackTrace();
