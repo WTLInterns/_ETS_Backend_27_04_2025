@@ -11,6 +11,7 @@ import com.example.demo.Service.CloudinaryService;
 import com.example.demo.Service.DriverService;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/driver")
@@ -57,6 +58,7 @@ public class DriverController {
             ? cloudinaryService.upload(idProofBackImg)  : null;
         String pccFormUrl         = (pccFormImg      != null && !pccFormImg.isEmpty())
             ? cloudinaryService.upload(pccFormImg)      : null;
+            String status = "DRIVER";
 
         // Build and save the Driver entity
         Driver driver = new Driver(
@@ -71,10 +73,22 @@ public class DriverController {
             idProofType,
             idProofFrontUrl,
             idProofBackUrl,
-            pccFormUrl
+            pccFormUrl,
+            status
+
         );
 
         Driver saved = driverService.saveDriver(driver);
         return ResponseEntity.status(201).body(saved);
+    }
+
+    @GetMapping("/allDriver")
+    public List<Driver> getAllDriver(){
+        return this.driverService.getAllDriver();
+    }
+
+    @GetMapping("/driver/{id}")
+    public Driver getDriverById(@PathVariable int id){
+        return this.driverService.getDriverById(id);
     }
 }

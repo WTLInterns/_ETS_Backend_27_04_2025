@@ -36,24 +36,28 @@ public class Driver {
 
     private String PccFormImg; // Police Clearance Certificate
 
+    private String status;
+
     public Driver() {
     }
 
     public Driver(String driverName, Long mobileNumber, String driverImg, String dOB, String licenseIdNum,
             Long licenseExpiryDate, String licenseFrontImg, String licenseBackImg, String idProofType,
-            String idProofFrontImg, String idProofBackImg, String pccFormImg) {
-        DriverName = driverName;
-        MobileNumber = mobileNumber;
-        DriverImg = driverImg;
-        DOB = dOB;
-        LicenseIdNum = licenseIdNum;
-        LicenseExpiryDate = licenseExpiryDate;
-        LicenseFrontImg = licenseFrontImg;
-        LicenseBackImg = licenseBackImg;
-        IdProofType = idProofType;
-        IdProofFrontImg = idProofFrontImg;
-        IdProofBackImg = idProofBackImg;
-        PccFormImg = pccFormImg;
+            String idProofFrontImg, String idProofBackImg, String pccFormImg, String status) {
+        this.DriverName = driverName;
+        this.MobileNumber = mobileNumber;
+        this.DriverImg = driverImg;
+        this.DOB = dOB;
+        this.LicenseIdNum = licenseIdNum;
+        this.LicenseExpiryDate = licenseExpiryDate;
+        this.LicenseFrontImg = licenseFrontImg;
+        this.LicenseBackImg = licenseBackImg;
+        this.IdProofType = idProofType;
+        this.IdProofFrontImg = idProofFrontImg;
+        this.IdProofBackImg = idProofBackImg;
+        this.PccFormImg = pccFormImg;
+        this.status=status;
+        
     }
 
     public String getDriverName() {
@@ -159,5 +163,15 @@ public class Driver {
     public void setDOB(String dOB) {
         DOB = dOB;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    
 
 }

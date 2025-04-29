@@ -30,8 +30,10 @@ public class SchedulingBooking {
 
     private List<LocalDate> dateOfList;
 
+    private String bookingType="SCHEDULE";
+
     public SchedulingBooking(int id, String pickUpLocation, String dropLocation, String time, String returnTime,
-            String shiftTime, List<LocalDate> dateOfList) {
+            String shiftTime, List<LocalDate> dateOfList, String bookingType) {
         this.id = id;
         this.pickUpLocation = pickUpLocation;
         this.dropLocation = dropLocation;
@@ -39,6 +41,7 @@ public class SchedulingBooking {
         this.returnTime = returnTime;
         this.shiftTime = shiftTime;
         this.dateOfList = dateOfList;
+        this.bookingType=bookingType;
     }
 
     public int getId() {
@@ -96,6 +99,16 @@ public class SchedulingBooking {
     public void setDateOfList(List<LocalDate> dateOfList) {
         this.dateOfList = dateOfList;
     }
+
+    public String getBookingType() {
+        return bookingType;
+    }
+
+    public void setBookingType(String bookingType) {
+        this.bookingType = bookingType;
+    }
+
+    
 
     
     
